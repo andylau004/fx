@@ -35,14 +35,9 @@ func (exampleHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, fmt.Sprintf("Headers: %+v", r.Header))
 }
 
-func enforceHeader(r uhttp.Route) uhttp.Route {
-	// require some weird headers
-	return r.Headers("X-Uber-FX", "yass")
-}
-
 func registerHTTPers(service service.Host) []uhttp.RouteHandler {
 	handler := &exampleHandler{}
 	return []uhttp.RouteHandler{
-		uhttp.NewRouteHandler("/", handler, enforceHeader),
+		uhttp.NewRouteHandler("/", handler),
 	}
 }

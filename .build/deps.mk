@@ -13,6 +13,8 @@ dependencies:
 	$(ECHO_V)go install ./vendor/github.com/kisielk/errcheck
 	@$(call label,Installing md-to-godoc...)
 	$(ECHO_V)go install ./vendor/github.com/sectioneight/md-to-godoc
+	@$(call label,Installing gocovmergee...)
+	$(ECHO_V)go install ./vendor/github.com/wadey/gocovmerge
 
 GOCOV := gocov
 OVERALLS := overalls

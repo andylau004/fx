@@ -1,10 +1,14 @@
-hash: 34abf7bf90054a375359a2c6636c0b9837a5128e6722d67b7a90b38cad31d64c
-updated: 2016-11-11T12:03:46.123653903-08:00
+hash: d65823f385f860552586734c26c17da7d8c5ab084ce986673d0ff4568d5b9774
+updated: 2016-11-19T01:48:25.817061312-08:00
 imports:
 - name: github.com/apache/thrift
-  version: fd832242bba9d4eaba71c7c08e8eed440b106f98
+  version: 2a89bd94ac4ba8c645cad1e0c01606fdac6dc30b
   subpackages:
   - lib/go/thrift
+- name: github.com/davecgh/go-spew
+  version: 346938d642f2ec3594ed81d874461961cd0faa76
+  subpackages:
+  - spew
 - name: github.com/facebookgo/clock
   version: 600d898af40aa09a7a93ecb9265d87b0504b6f03
 - name: github.com/go-validator/validator
@@ -20,12 +24,21 @@ imports:
   - log
 - name: github.com/pkg/errors
   version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
+  - require
 - name: github.com/uber-go/atomic
   version: 0c9e689d64f004564b79d9a663634756df322902
 - name: github.com/uber-go/tally
   version: 17aa18f4826bf57be74cbb9a94984cdb7aa63716
 - name: github.com/uber-go/zap
-  version: f2929c57adb5be8fb03cad9a6912c509a5cb60af
+  version: 5c7c5002f484c5062d2e7ec0ba3ca08773c0692d
 - name: github.com/uber/jaeger-client-go
   version: e39d0f1b622558cae3d9db0062a739cc6ffa700f
   subpackages:
@@ -72,53 +85,40 @@ imports:
   - transport/tchannel
   - transport/tchannel/internal
 - name: golang.org/x/net
-  version: 9ef22118a4b25863aa94546daffbc0a18feaafb3
+  version: 4971afdc2f162e82d185353533d3cf16188a9f4e
   subpackages:
   - context
 - name: gopkg.in/yaml.v2
-  version: a83829b6f1293c91addabc89d0571c246397bbf4
+  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
 testImports:
 - name: github.com/anmitsu/go-shlex
   version: 648efa622239a2f6ff949fed78ee37b48d499ba4
 - name: github.com/axw/gocov
-  version: 54b98cfcac0c63fb3f9bd8e7ad241b724d4e985b
+  version: f5b2b5cf8644b8b432436eaee1c8a73d2f4cf86e
   subpackages:
   - gocov
-- name: github.com/davecgh/go-spew
-  version: 346938d642f2ec3594ed81d874461961cd0faa76
-  subpackages:
-  - spew
-- name: github.com/go-playground/overalls
-  version: 6de3f6a9f4b3449d179d98d63b521716cda834fb
 - name: github.com/golang/lint
-  version: 3390df4df2787994aea98de825b964ac7944b817
+  version: 8f348af5e29faa4262efdc14302797f23774e477
   subpackages:
   - golint
 - name: github.com/jessevdk/go-flags
-  version: 0648c820cd4e564706597268ae2d2c7d9e6900c6
+  version: 8bc97d602c3bfeb5fc6fc9b5a9c898f245495637
 - name: github.com/kisielk/errcheck
-  version: 9c1292e1c962175f76516859f4a88aabd86dc495
+  version: db0ca22445717d1b2c51ac1034440e0a2a2de645
 - name: github.com/kisielk/gotool
   version: 5e136deb9b893bbe6c8f23236ff4378b7a8a0dbb
 - name: github.com/mattn/goveralls
-  version: edf7508a2bcb40ec1160e94518c983c2fc169f02
+  version: a63d65fe590e2c830e60ad260cde6755ce3482a5
 - name: github.com/pborman/uuid
   version: 3d4f2ba23642d3cfd06bd4b54cf03d99d95c0f1b
-- name: github.com/pmezard/go-difflib
-  version: 792786c7400a136282c1664665ae0a8db921c6c2
-  subpackages:
-  - difflib
 - name: github.com/russross/blackfriday
   version: 52676fb0053ff19b59451b2aed2a1b8de7d89592
 - name: github.com/sectioneight/md-to-godoc
-  version: f7ad6a1a485df328ddc1bf11b8f384f82498f6dc
+  version: f274e5a4257c85a9eaf60ac820ee813b78cac6ab
 - name: github.com/shurcooL/sanitized_anchor_name
   version: 1dba4b3954bc059efc3991ec364f9f9a35f597d2
-- name: github.com/stretchr/testify
-  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
-  subpackages:
-  - assert
-  - require
+- name: github.com/wadey/gocovmerge
+  version: b5bfa59ec0adc420475f97f89b58045c721d761c
 - name: go.uber.org/atomic
   version: 9e99152552a6ce13fa3b2ce4a9c4fb117cca4506
 - name: golang.org/x/tools

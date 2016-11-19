@@ -35,6 +35,8 @@ else
 _FILTER_OVERALLS = grep -v "^Processing:"
 endif
 
+GO_TEST_FILES = $(shell go list ./... | grep -v /vendor/)
+
 # This is the default for overalls
 COVER_OUT := profile.coverprofile
 
@@ -44,14 +46,13 @@ $(COV_REPORT): $(PKG_FILES) $(ALL_SRC)
 	$(ECHO_V)$(MAKE) -C examples/keyvalue/ kv/types.go ECHO_V=$(ECHO_V)
 	@$(call label,Running tests)
 	@echo
-	$(ECHO_V)$(OVERALLS) -project=$(PROJECT_ROOT) \
-		-ignore "$(OVERALLS_IGNORE)" \
+	$(ECHO_V)go test -coverpkg=$(GO_TEST_FILES) \
 		-covermode=atomic \
-		$(DEBUG_FLAG) -- \
 		$(TEST_FLAGS) $(RACE) $(TEST_VERBOSITY_FLAG) | \
 		grep -v "No Go Test files" | \
 		$(_FILTER_OVERALLS)
-	$(ECHO_V)if [ -a $(COV_REPORT) ]; then \
+	gocovmerge $(shell find . -name $(COVER_OUT) -not -path "./vendor/*") > $@
+	$(ECHO_V)if [ -a $@ ]; then \
 		$(GOCOV) convert $@ | $(GOCOV) report ; \
 	fi
 
